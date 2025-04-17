@@ -11,6 +11,7 @@ To start using this example App
 
 ## Features
  - generate 1 or more fake student records
+ - experience Autosaving after every record modification
  - browse all records in a list
  - view a single record in its entirety
  - Edit a student record
