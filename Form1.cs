@@ -103,7 +103,6 @@ namespace StudentManager
                 lvStudents.Items.Add(item);
             }
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var CurrentStudent = studentManager.AddStudent();
@@ -111,12 +110,10 @@ namespace StudentManager
             CurrentIndex = CurrentStudent.Id;
             DisplayCurrentStudent();
         }
-
         private void richTextBoxDisplay_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void btnNext_Click(object sender, EventArgs e)
         {
             var students = studentManager.GetAllStudents();
@@ -128,7 +125,6 @@ namespace StudentManager
                 DisplayCurrentStudent();
             }
         }
-
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             if (CurrentIndex > 0)
@@ -137,7 +133,6 @@ namespace StudentManager
                 DisplayCurrentStudent();
             }
         }
-
         private void btnRemove_Click(object sender, EventArgs e)
         {
             var students = studentManager.GetAllStudents();
@@ -160,7 +155,6 @@ namespace StudentManager
             // Refresh display
             DisplayCurrentStudent();
         }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
             var students = studentManager.GetAllStudents();
@@ -202,7 +196,6 @@ namespace StudentManager
             // Refresh display
             DisplayCurrentStudent();
         }
-
         private void btnIndexSearch_Click(object sender, EventArgs e)
         {
             var students = studentManager.GetAllStudents();
@@ -222,12 +215,10 @@ namespace StudentManager
             CurrentIndex = index - 1;
             DisplayCurrentStudent();
         }
-
         private void txtSearchIndex_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void btnNameSearch_Click(object sender, EventArgs e)
         {
             string searchName = txtNameSearch.Text.Trim().ToLower();
@@ -252,7 +243,6 @@ namespace StudentManager
 
             MessageBox.Show("Student not found.");
         }
-
         private void lvStudents_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvStudents.SelectedItems.Count > 0)
@@ -262,13 +252,11 @@ namespace StudentManager
                 DisplayCurrentStudent();
             }
         }
-
         private void btnSaveToJson_Click(object sender, EventArgs e)
         {
             SaveStudentsToJson();
             MessageBox.Show("Students saved to executable root folder.");
         }
-
         private void btnLoadFromJson_Click(object sender, EventArgs e)
         {
             LoadStudentsFromJson();
@@ -383,7 +371,7 @@ namespace StudentManager
                 FirstName = GenerateRandomName(5, 5),
                 LastName = GenerateRandomName(5, 5), // random name between 3 and 8 characters
                 Cohort = _cohort, // random cohort between 1 and 12
-                Age = _cohort + 6 + new Random().Next(-1, 2), // random age between 17 and 19
+                Age = _cohort + 6 + new Random().Next(-1, 2), // random age between +1/-1 of cohort + 6
                 Grades = GenerateRandomGrades()
             };
             students.Add(student);
